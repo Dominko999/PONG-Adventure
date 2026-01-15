@@ -11,9 +11,9 @@ class Player(pygame.sprite.Sprite):
         super().__init__(groups)
 
         # stats
-        self.level = 1
-        self.exp = 0
-        self.exp_cap = self.level * 2 + 4
+        self.stats = {'level': 1, 'exp': 0, 'health': 3, 'agility': 5, 'size': 4}
+
+        self.exp_cap = self.stats['level'] * 2 + 4
         self.health = 3
         self.agility = 5
         self.size = 4
@@ -26,21 +26,21 @@ class Player(pygame.sprite.Sprite):
         self.world_size = world_size
 
     def level_up(self):
-        self.level += 1
-        self.exp -= self.exp_cap
+        self.stats['level'] += 1
+        self.stats['exp'] -= self.exp_cap
         self.exp_cap += 2
         self.change_sprite()
 
     def change_sprite(self):
-        if self.level == 1:
+        if self.stats['level'] == 1:
             self.animated_sprite = AnimatedSprite('fli', 4, (56, 40), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
-        elif self.level == 3:
+        elif self.stats['level'] == 3:
             self.animated_sprite = AnimatedSprite('medium_fli', 4, (60, 56), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
-        elif self.level == 5:
+        elif self.stats['level'] == 5:
             self.animated_sprite = AnimatedSprite('large_fli', 4, (84, 76), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
@@ -93,7 +93,7 @@ class Player(pygame.sprite.Sprite):
         self.move(dt)
 
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self, groups, collision_group, world_size):
+    def __init__(self, groups, collision_group, world_size, id):
         super().__init__(groups)
 
         #self.bounding_box = pygame.Rect(0, 0, self.rect.width * 5, self.rect.height * 5)
@@ -104,6 +104,7 @@ class Enemy(pygame.sprite.Sprite):
 
         self.change_direction_timer = Timer(1,self.change_direction, True)
         self.change_direction_timer.activate()
+        self.id = id
 
     def update(self, dt):
         self.change_direction_timer.update()
@@ -141,8 +142,8 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.bottom = min(self.rect.bottom, self.world_size[1])
 
 class FlyEnemy(Enemy):
-    def __init__(self, groups, collision_group, world_size, position):
-        super().__init__(groups, collision_group, world_size)
+    def __init__(self, groups, collision_group, world_size, position, id):
+        super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil fly"
         self.health = 1
         self.exp_gain = 2
@@ -161,8 +162,8 @@ class FlyEnemy(Enemy):
         self.animated_sprite.update(dt)
 
 class SpiderlikeEnemy(Enemy):
-    def __init__(self, groups, collision_group, world_size, position):
-        super().__init__(groups, collision_group, world_size)
+    def __init__(self, groups, collision_group, world_size, position, id):
+        super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil spiderlike creature"
         self.health = 6
         self.exp_gain = 6
@@ -181,8 +182,8 @@ class SpiderlikeEnemy(Enemy):
         self.animated_sprite.update(dt)
 
 class BeetleEnemy(Enemy):
-    def __init__(self, groups, collision_group, world_size, position):
-        super().__init__(groups, collision_group, world_size)
+    def __init__(self, groups, collision_group, world_size, position, id):
+        super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil very big beetle"
         self.health = 14
         self.exp_gain = 12

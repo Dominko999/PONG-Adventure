@@ -115,7 +115,7 @@ class Battle(Scene):
 
     def battle_won(self):
         self.game_manager.exp_gain = self.game_manager.active_enemy.exp_gain
-        self.game_manager.save_manager.game_state['defeated_enemies'][str(self.game_manager.active_enemy.rect.center)] = True
+        self.game_manager.save_manager.game_state['defeated_enemies'][self.game_manager.active_enemy.id] = True
         self.game_manager.active_enemy.kill()
         self.game_manager.active_enemy = None
         self.game_manager.change_scene('STATS', new_instance = True)
@@ -201,11 +201,12 @@ class Overworld(Scene):
         for index, line in enumerate(self.enemies_to_spawn):
             class_name = line[0]
             pos = (line[1], line[2])
-            if not self.game_manager.save_manager.is_instance_already_cleared(str(pos)):
-                enemy_instance = self.classes_of_instances_to_spawn[class_name]((self.overworld_sprites, self.enemy_sprites), self.tilemap.collision_group, self.tilemap.world_size, pos)
-            if len(line) == 6:
-                blocked_door = line[3]
-                door_pos = (line[4], line[5])
+            id = str(index)
+            if not self.game_manager.save_manager.is_instance_already_cleared(id):
+                enemy_instance = self.classes_of_instances_to_spawn[class_name]((self.overworld_sprites, self.enemy_sprites), self.tilemap.collision_group, self.tilemap.world_size, pos, id)
+            if len(line) == 7:
+                blocked_door = line[4]
+                door_pos = (line[5], line[6])
                 self.classes_of_instances_to_spawn[blocked_door]((self.overworld_sprites, self.tilemap.collision_group), door_pos, enemy_instance)
 
 
@@ -229,7 +230,8 @@ class Overworld(Scene):
         for item in self.item_sprites:
             if item.rect.colliderect(self.player.rect):
                 if isinstance(item, LightBulb):
-                    self.game_manager.save_manager.save_game()
+                    self.game_manager.save_manager.save_game(self.player.l)
+
                 elif isinstance(item, OldScripture):
                     self.scene_state = 'Dialogue'
                     self.end_game = True
@@ -512,15 +514,15 @@ class Stats(Scene):
         self.state = 'DEFAULT'
 
     def add_exp(self):
-        current_exp = self.game_manager.player.exp
-        setattr(self.game_manager.player, 'exp', current_exp + self.game_manager.exp_gain)
+        current_exp = self.game_manager.player.stats['exp']
+        setattr(self.game_manager.player, 'stats[exp]', current_exp + self.game_manager.exp_gain)
 
     def match_fli_image(self):
-        if self.game_manager.player.level == 1:
+        if self.game_manager.player.stats['level'] == 1:
             self.ui_sprites.remove(self.fli_image)
             self.fli_image = AnimatedSprite('fli_stats', 1, (256,256), 0)
             self.ui_sprites.add(self.fli_image)
-        elif self.game_manager.player.level == 2:
+        elif self.game_manager.player.stats['level'] == 2:
             self.ui_sprites.remove(self.fli_image)
             self.fli_image = AnimatedSprite('medium_fli_stats', 1, (256,256), 0)
             self.ui_sprites.add(self.fli_image)
@@ -531,7 +533,7 @@ class Stats(Scene):
         self.fli_image.rect.midleft = (WINDOW_WIDTH / 10, WINDOW_HEIGHT / 7 * 3)
 
     def check_level_up(self):
-        if self.game_manager.player.exp >= self.game_manager.player.exp_cap:
+        if self.game_manager.player.stats['exp'] >= self.game_manager.player.exp_cap:
             self.game_manager.player.level_up()
             self.state = 'LEVEL_UP'
 
@@ -540,7 +542,7 @@ class Stats(Scene):
 
         #update
         self.ui_sprites.update(dt)
-        self.exp_bar.update_progress_bar(self.game_manager.player.exp)
+        self.exp_bar.update_progress_bar(self.game_manager.player.stats['exp'])
 
         #draw
         self.screen.fill(COLORS['bg'])
@@ -548,7 +550,7 @@ class Stats(Scene):
         write_text('Stats', FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 2,
                    WINDOW_HEIGHT / 7, anchor='center',screen=self.screen)
 
-        write_text('Level ' + str(self.game_manager.player.level), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 10, WINDOW_HEIGHT / 7 * 4.7, anchor='midleft',screen=self.screen)
+        write_text('Level ' + str(self.game_manager.player.stats['level']), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 10, WINDOW_HEIGHT / 7 * 4.7, anchor='midleft',screen=self.screen)
 
         # stat names
         write_text('Health', FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 6.5,
