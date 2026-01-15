@@ -229,7 +229,7 @@ class Overworld(Scene):
         for item in self.item_sprites:
             if item.rect.colliderect(self.player.rect):
                 if isinstance(item, LightBulb):
-                    self.save_game()
+                    self.game_manager.save_manager.save_game()
                 elif isinstance(item, OldScripture):
                     self.scene_state = 'Dialogue'
                     self.end_game = True
@@ -388,11 +388,15 @@ class SaveFiles(Scene):
 
         self.buttons_group = pygame.sprite.Group()
         self.file_1_button = Button(self.buttons_group, 'File 1', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 250,
-                                    1000, 140, lambda : self.game_manager.change_scene('INTRO', new_instance = True), self.screen)
+                                    1000, 140, lambda : self.load_save_file('save1'), self.screen)
         self.file_2_button = Button(self.buttons_group, 'File 2', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 420,
-                                    1000, 140, lambda: self.game_manager.change_scene('OVERWORLD', new_instance = True), self.screen)
+                                    1000, 140, lambda: self.load_save_file('save2'), self.screen)
         self.file_3_button = Button(self.buttons_group, 'File 3', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 590,
-                                    1000, 140, lambda: self.game_manager.change_scene('BATTLE', new_instance = True), self.screen)
+                                    1000, 140, lambda: self.load_save_file('save3'), self.screen)
+
+    def load_save_file(self, file_number):
+        self.game_manager.save_manager.load_save(file_number)
+        self.game_manager.change_scene('INTRO', new_instance=True)
 
     def run(self, dt):
         super().run(dt)
