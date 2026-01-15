@@ -1,1 +1,1 @@
-{"player_position": "", "level": 1, "exp": 0, "health": 3, "agility": 5, "size": 4, "defeated_enemies": {}, "opened_doors": {}}
+{"player_position": [2586.799560546875, 3535.0009765625], "stats": {"level": 3, "exp": 6, "health": 4, "agility": 5, "size": 5}, "defeated_enemies": {"2": true, "0": true}, "opened_doors": {}, "save_name": "Anicient ruins"}

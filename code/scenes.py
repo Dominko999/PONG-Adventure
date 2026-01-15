@@ -79,7 +79,7 @@ class Battle(Scene):
         self.ui_sprites = pygame.sprite.Group()
 
         # getting player and enemy variables
-        self.player_health = getattr(self.game_manager.player, 'health')
+        self.player_health = self.game_manager.player.stats['health']
         self.enemy_health = getattr(self.game_manager.active_enemy, 'health')
         self.enemy_name = getattr(self.game_manager.active_enemy, 'name')
 
@@ -158,7 +158,7 @@ class Overworld(Scene):
         self.item_sprites = pygame.sprite.Group()
 
         if self.game_manager.player is None:
-            self.player = Player(self.overworld_sprites, self.tilemap.collision_group, (475, 6100), self.tilemap.world_size) # 475, 6100
+            self.player = Player(self.overworld_sprites, self.tilemap.collision_group, self.game_manager.save_manager.game_state['player_position'], self.tilemap.world_size, self.game_manager.save_manager.game_state['stats']) #475, 6100
         else:
             self.player = self.game_manager.player
             self.overworld_sprites.add(self.player)
@@ -187,7 +187,7 @@ class Overworld(Scene):
 
         # items
         self.old_scripture = OldScripture((self.overworld_sprites, self.item_sprites), (4155,1737))
-        self.lightbulb1 = LightBulb((self.overworld_sprites, self.item_sprites), (1600, 5125))
+        self.lightbulb1 = LightBulb((self.overworld_sprites, self.item_sprites), (2594, 3533))
 
         self.camera = Camera(self.player, self.tilemap.world_size)
         self.camera_group = CameraGroup(self.camera)
@@ -230,8 +230,9 @@ class Overworld(Scene):
         for item in self.item_sprites:
             if item.rect.colliderect(self.player.rect):
                 if isinstance(item, LightBulb):
-                    self.game_manager.save_manager.save_game(self.player.l)
-
+                    self.game_manager.save_manager.save_game(self.player.rect.center, self.player.stats, item.checkpoint_name)
+                    self.scene_state = 'Dialogue'
+                    self.text_box = TextBox(self.dialogue_sprites, item.text, mode='text')
                 elif isinstance(item, OldScripture):
                     self.scene_state = 'Dialogue'
                     self.end_game = True
@@ -284,7 +285,7 @@ class Menu(Scene):
         self.title_rect = self.title_text.get_rect(center=(WINDOW_WIDTH/2, WINDOW_HEIGHT/2 - 200))
         self.buttons_group = pygame.sprite.Group()
         self.start_button = Button(self.buttons_group, 'Start', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2,
-                                   300, 90, lambda : self.game_manager.change_scene('INSTRUCTIONS'), self.screen)
+                                   300, 90, lambda : self.game_manager.change_scene('SAVE_FILES'), self.screen)
         self.quit_button = Button(self.buttons_group, 'Quit', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + 200,
                                   300, 90, lambda: self.game_manager.quit_game(), self.screen)
     def run(self, dt):
@@ -300,19 +301,15 @@ class Instructions(Scene):
     def __init__(self, scene_manager : GameManager):
         super().__init__(scene_manager)
 
-        self.left_player_instructions_text = ['Use W and S keys to move the paddle up and down',
-                                    'Use D key to bounce the ball with more power',
-                                    'Use Q key to make the paddle slide and curve the ball',
+        self.overworld_instructions_text = ['Use WASD to move',
                                     'Press E key to advance dialogue and interact with NPCs and items']
-
-        self.right_player_instructions_text = ['Use UP and DOWN arrow keys to move the paddle up and down',
-                                              'Use LEFT key to bounce the ball with more power',
-                                              'Use RIGHT key to make the paddle slide and curve the ball']
-
+        self.battle_instructions_text = ['Use W and S keys to move the paddle up and down',
+                                    'Use D key to bounce the ball with more power',
+                                    'Use Q key to make the paddle slide and curve the ball']
 
         self.buttons_group = pygame.sprite.Group()
         self.start_button = Button(self.buttons_group, 'OK', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + 250,
-                                   300, 90, lambda : self.game_manager.change_scene('SAVE_FILES'), self.screen)
+                                   300, 90, lambda : self.game_manager.change_scene('INTRO'), self.screen)
 
     def run(self, dt):
         super().run(dt)
@@ -323,8 +320,13 @@ class Instructions(Scene):
         #draw
         self.screen.fill(COLORS['bg'])
 
-        write_text('Left player:', FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 4, 150, screen=self.screen)
-        write_text(self.left_player_instructions_text, FONTS['instructions_text'], COLORS['bg_detail'], WINDOW_WIDTH / 4, 250, 50, screen=self.screen)
+        write_text('Overworld controls:', FONTS['menu_buttons'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 100, screen=self.screen)
+        write_text(self.overworld_instructions_text, FONTS['instructions_text'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 150, 50, screen=self.screen)
+
+        write_text('Battle controls:', FONTS['menu_buttons'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 300,
+                   screen=self.screen)
+        write_text(self.battle_instructions_text, FONTS['instructions_text'], COLORS['bg_detail'], WINDOW_WIDTH / 2,
+                   350, 50, screen=self.screen)
 
         self.buttons_group.draw(self.screen)
 
@@ -389,16 +391,40 @@ class SaveFiles(Scene):
         super().__init__(scene_manager)
 
         self.buttons_group = pygame.sprite.Group()
-        self.file_1_button = Button(self.buttons_group, 'File 1', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 250,
-                                    1000, 140, lambda : self.load_save_file('save1'), self.screen)
-        self.file_2_button = Button(self.buttons_group, 'File 2', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 420,
-                                    1000, 140, lambda: self.load_save_file('save2'), self.screen)
-        self.file_3_button = Button(self.buttons_group, 'File 3', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, 590,
-                                    1000, 140, lambda: self.load_save_file('save3'), self.screen)
+        self.create_buttons()
 
     def load_save_file(self, file_number):
         self.game_manager.save_manager.load_save(file_number)
-        self.game_manager.change_scene('INTRO', new_instance=True)
+        if self.game_manager.save_manager.new_game:
+            self.game_manager.change_scene('INSTRUCTIONS', new_instance=True)
+        else:
+            self.game_manager.change_scene('OVERWORLD', new_instance=True)
+
+    def delete_save_file(self, file_number):
+        self.game_manager.save_manager.delete_save_file(file_number)
+        self.buttons_group.empty()
+        self.create_buttons()
+
+
+    def create_buttons(self):
+        self.file_1_button = Button(self.buttons_group, self.game_manager.save_manager.return_save_name('save1'),
+                                    'menu_buttons', 'bg', WINDOW_WIDTH / 24 * 11, 250,
+                                    1000, 140, lambda: self.load_save_file('save1'), self.screen)
+        self.file_2_button = Button(self.buttons_group, self.game_manager.save_manager.return_save_name('save2'),
+                                    'menu_buttons', 'bg', WINDOW_WIDTH / 24 * 11, 420,
+                                    1000, 140, lambda: self.load_save_file('save2'), self.screen)
+        self.file_3_button = Button(self.buttons_group, self.game_manager.save_manager.return_save_name('save3'),
+                                    'menu_buttons', 'bg', WINDOW_WIDTH / 24 * 11, 590,
+                                    1000, 140, lambda: self.load_save_file('save3'), self.screen)
+        self.delete_file_1_button = Button(self.buttons_group, 'Delete',
+                                           'instructions_text', 'bg', WINDOW_WIDTH / 24 * 22, 250,
+                                           150, 60, lambda: self.delete_save_file('save1'), self.screen)
+        self.delete_file_2_button = Button(self.buttons_group, 'Delete',
+                                           'instructions_text', 'bg', WINDOW_WIDTH / 24 * 22, 420,
+                                           150, 60, lambda: self.delete_save_file('save2'), self.screen)
+        self.delete_file_3_button = Button(self.buttons_group, 'Delete',
+                                           'instructions_text', 'bg', WINDOW_WIDTH / 24 * 22, 590,
+                                           150, 60, lambda: self.delete_save_file('save3'), self.screen)
 
     def run(self, dt):
         super().run(dt)
@@ -480,7 +506,6 @@ class Stats(Scene):
         self.fli_image = AnimatedSprite('fli_stats', 1, (256,256), 0)
         self.match_fli_image()
 
-
         self.exp_bar = ProgressBar(self.ui_sprites, self.game_manager.player.exp_cap, 20, COLORS['paddle_slide'],WINDOW_WIDTH / 10,
                                    WINDOW_HEIGHT / 7 * 5.3, anchor='left')
 
@@ -509,13 +534,11 @@ class Stats(Scene):
                                    lambda : self.game_manager.unpause_scene(), self.screen)
 
     def upgrade_stat(self, stat):
-        current_value = getattr(self.game_manager.player, stat)
-        setattr(self.game_manager.player, stat, current_value + 1)
+        self.game_manager.player.stats[stat] += 1
         self.state = 'DEFAULT'
 
     def add_exp(self):
-        current_exp = self.game_manager.player.stats['exp']
-        setattr(self.game_manager.player, 'stats[exp]', current_exp + self.game_manager.exp_gain)
+        self.game_manager.player.stats['exp'] += self.game_manager.exp_gain
 
     def match_fli_image(self):
         if self.game_manager.player.stats['level'] == 1:
@@ -561,11 +584,11 @@ class Stats(Scene):
                    WINDOW_HEIGHT / 7 * 4, anchor='midleft',screen=self.screen)
 
         # stat numbers
-        write_text(str(self.game_manager.player.health), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
+        write_text(str(self.game_manager.player.stats['health']), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
                    WINDOW_HEIGHT / 7 * 2, anchor='midleft', screen=self.screen)
-        write_text(str(self.game_manager.player.agility), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
+        write_text(str(self.game_manager.player.stats['agility']), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
                    WINDOW_HEIGHT / 7 * 3, anchor='midleft', screen=self.screen)
-        write_text(str(self.game_manager.player.size), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
+        write_text(str(self.game_manager.player.stats['size']), FONTS['instructions_player'], COLORS['bg_detail'], WINDOW_WIDTH / 12 * 9.5,
                    WINDOW_HEIGHT / 7 * 4, anchor='midleft', screen=self.screen)
 
         if self.state == 'DEFAULT':

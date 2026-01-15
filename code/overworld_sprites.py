@@ -7,11 +7,11 @@ from camera import CameraGroup
 from animation import AnimatedSprite
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, groups, collision_group, position, world_size):
+    def __init__(self, groups, collision_group, position, world_size, stats):
         super().__init__(groups)
 
         # stats
-        self.stats = {'level': 1, 'exp': 0, 'health': 3, 'agility': 5, 'size': 4}
+        self.stats = stats
 
         self.exp_cap = self.stats['level'] * 2 + 4
         self.health = 3
@@ -25,6 +25,9 @@ class Player(pygame.sprite.Sprite):
         self.collision_group = collision_group
         self.world_size = world_size
 
+    def add_exp(self, exp):
+        self.stats['exp'] += exp
+
     def level_up(self):
         self.stats['level'] += 1
         self.stats['exp'] -= self.exp_cap
@@ -32,15 +35,15 @@ class Player(pygame.sprite.Sprite):
         self.change_sprite()
 
     def change_sprite(self):
-        if self.stats['level'] == 1:
+        if self.stats['level'] == 1 or self.stats['level'] == 2:
             self.animated_sprite = AnimatedSprite('fli', 4, (56, 40), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
-        elif self.stats['level'] == 3:
+        elif self.stats['level'] == 3 or self.stats['level'] == 4:
             self.animated_sprite = AnimatedSprite('medium_fli', 4, (60, 56), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
-        elif self.stats['level'] == 5:
+        elif self.stats['level'] >= 5:
             self.animated_sprite = AnimatedSprite('large_fli', 4, (84, 76), 8)
             self.image = self.animated_sprite.image
             self.rect = self.animated_sprite.rect
@@ -146,7 +149,7 @@ class FlyEnemy(Enemy):
         super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil fly"
         self.health = 1
-        self.exp_gain = 2
+        self.exp_gain = 10
         self.animated_sprite = AnimatedSprite('fly', 4, (120, 76), 8)
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect
@@ -319,13 +322,10 @@ class LightBulb(InteractableObject):
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect
         self.rect.center = position
+        self.checkpoint_name = 'Anicient ruins'
 
         self.text = [
-            'You picked up the old scripture',
-            'That is it, you finished the game',
-            'Thank you for playing',
-            'Have a nice day',
-            'Goodbye'
+            'Game saved'
         ]
 
 class BlockedDoor(pygame.sprite.Sprite):

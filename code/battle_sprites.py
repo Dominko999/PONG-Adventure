@@ -98,8 +98,8 @@ class PlayerPaddle(LeftPaddle):
         self.base_x = POS['player_paddle'][0]
 
     def sync_stats(self, player):
-        self.image = pygame.Surface((SIZE['paddle'][0], SIZE['paddle'][1] + (player.size * 25)))
-        self.speed = SPEED['paddle'] + (player.agility * 100)
+        self.image = pygame.Surface((SIZE['paddle'][0], SIZE['paddle'][1] + (player.stats['size'] * 25)))
+        self.speed = SPEED['paddle'] + (player.stats['agility'] * 100)
 
     def slide(self, dt):
         if self.slide_timer:
