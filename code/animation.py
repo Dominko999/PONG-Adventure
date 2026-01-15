@@ -13,6 +13,8 @@ class AnimatedSprite(pygame.sprite.Sprite):
         self.speed = speed
 
     def update(self, dt):
+        if self.speed == 0:
+            return
         self.index += dt * self.speed
         self.image = self.frames[int(self.index) % len(self.frames)]
 

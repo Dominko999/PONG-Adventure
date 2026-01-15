@@ -1,8 +1,10 @@
 import pygame
 from settings import *
+from timer import Timer
+from animation import AnimatedSprite
 
 class TextBox(pygame.sprite.Sprite):
-    def __init__(self, groups, text, mode='dialogue'):
+    def __init__(self, groups, text, character_name='', mode='dialogue'):
         super().__init__(groups)
         self.text = text
         self.mode = mode
@@ -10,34 +12,73 @@ class TextBox(pygame.sprite.Sprite):
         self.line = 0
         self.active = True
 
-        # white outline, used as main image
-        self.image = pygame.Surface((910, 160), pygame.SRCALPHA)
-        self.rect = self.image.get_frect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 6 * 5))
-        self.image.fill(COLORS['paddle_active'])
+        self.letter_timer = Timer(0.01,lambda: self.write_letter(), repeat=True)
+        self.letter_index = 0
+        self.line_to_blit = ''
 
-        # black background
-        self.background_image = pygame.Surface((900, 150), pygame.SRCALPHA)
-        self.background_rect = self.background_image.get_frect(center=(self.image.get_width()/2, self.image.get_height()/2))
-        self.background_image.fill(COLORS['bg'])
+        if self.mode == 'dialogue':
+            # background
+            self.animated_sprite = AnimatedSprite('dialogue_box', 1, (1088, 216), 0)
+            self.image = self.animated_sprite.frames[0].copy()
+            self.rect = self.image.get_frect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 6 * 5))
+
+            # npc name
+            self.name_text_surf = FONTS['dialogue'].render(str(character_name), True, COLORS['paddle_active'])
+            self.name_text_rect = self.name_text_surf.get_frect(midleft=(self.image.get_width()/13, self.image.get_height()/9))
+
+            self.image.blit(self.name_text_surf, self.name_text_rect)
+
+        if self.mode == 'text':
+            # background
+            self.animated_sprite = AnimatedSprite('text_box', 1, (1088, 216), 0)
+            self.image = self.animated_sprite.image.copy()
+            self.rect = self.image.get_frect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 6 * 5))
+
 
         # text
-        self.text_surf = FONTS['dialogue'].render(str(text[0]), True, COLORS['paddle_active'])
-        self.text_rect = self.text_surf.get_frect(center=(self.image.get_width()/2, self.image.get_height()/2-5))
+        self.text_surf = FONTS['dialogue'].render(str(self.text[self.line]), True, COLORS['paddle_active'])
+        self.text_rect = self.text_surf.get_frect(center=(self.image.get_width() / 2, self.image.get_height() / 2))
+        self.letter_timer.activate()
 
 
-        self.background_image.blit(self.text_surf, self.text_rect)
-        self.image.blit(self.background_image, self.background_rect)
+    def write_letter(self):
+        full_line = self.text[self.line]
+        if self.letter_index < len(full_line):
+            self.line_to_blit = self.line_to_blit + str(full_line[self.letter_index])
+            self.text_surf = FONTS['dialogue'].render(str(full_line), True, COLORS['paddle_active'])
+            self.text_rect = self.text_surf.get_frect(center=(self.image.get_width() / 2, self.image.get_height() / 2))
+            self.text_surf = FONTS['dialogue'].render(self.line_to_blit, True, COLORS['paddle_active'])
+            if self.mode == 'dialogue':
+                self.redraw_dialogue()
+            if self.mode == 'text':
+                self.redraw_text()
+            self.letter_index += 1
+        else:
+            self.letter_timer.terminate()
+
 
     def next_line(self):
         self.line += 1
         if self.line < len(self.text):
-            self.text_surf = FONTS['dialogue'].render(str(self.text[self.line]), True, COLORS['paddle_active'])
-            self.text_rect = self.text_surf.get_frect(
-                center=(self.image.get_width() / 2, self.image.get_height() / 2 - 5))
-            self.background_image.fill(COLORS['bg'])
-            self.background_image.blit(self.text_surf, self.text_rect)
-            self.image.blit(self.background_image, self.background_rect)
+            #refreshes text and proceeds to redraw according to mode
+            self.letter_index = 0
+            self.line_to_blit = ''
+            self.letter_timer.activate() # activates the timer, update function sees it and starts calling animate_writing function every frame
+
         else:
             self.active = False
             self.kill()
 
+    def redraw_dialogue(self):
+        self.image = self.animated_sprite.frames[0].copy()
+
+        self.image.blit(self.name_text_surf, self.name_text_rect)
+        self.image.blit(self.text_surf, self.text_rect)
+
+    def redraw_text(self):
+        self.image = self.animated_sprite.frames[0].copy()
+
+        self.image.blit(self.text_surf, self.text_rect)
+
+    def update(self, dt):
+        self.letter_timer.update()

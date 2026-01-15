@@ -2,6 +2,7 @@ from settings import *
 from battle_sprites import *
 from button import *
 from scenes import *
+from save_manager import SaveManager
 
 if __name__ == '__main__':
     pygame.init()
@@ -19,8 +20,10 @@ if __name__ == '__main__':
               'PAUSE_MENU' : PauseMenu,
               'INSTRUCTIONS' : Instructions,
               'SAVE_FILES' : SaveFiles,
+              'INTRO' : Intro,
               'BATTLE': Battle,
               'OVERWORLD' : Overworld,
+              'STATS' : Stats,
               'GAME_OVER' : GameOver}
 
     scene_instances = {}

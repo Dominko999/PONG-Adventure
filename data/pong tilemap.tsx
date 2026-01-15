@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.11.2" name="pong tilemap" tilewidth="16" tileheight="16" tilecount="64" columns="8">
- <image source="../../../../Tiled projects/pong tilemap.png" width="128" height="128"/>
+ <image source="pong tilemap.png" width="128" height="128"/>
  <wangsets>
   <wangset name="Walls" type="mixed" tile="-1">
    <wangcolor name="Dirt walls" color="#ff0000" tile="-1" probability="1"/>

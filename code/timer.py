@@ -23,6 +23,10 @@ class Timer():
         if self.repeat:
             self.activate()
 
+    def terminate(self): #deactivates the timer successfully when it's on repeat mode
+        self.active = False
+        self.start_time = 0
+
     def update(self):
 
         if pygame.time.get_ticks() - self.start_time >= self.duration:

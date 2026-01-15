@@ -1,9 +1,9 @@
-import pygame, random
+import pygame, random, json
 from os.path import join
 
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 BATTLE_AREA_LEFT, BATTLE_AREA_TOP, BATTLE_AREA_RIGHT, BATTLE_AREA_BOTTOM = WINDOW_WIDTH / 14, WINDOW_HEIGHT / 12, WINDOW_WIDTH / 14 * 13, WINDOW_HEIGHT / 12 * 10
-SIZE = {'paddle' : (20,160), 'ball' : (20,20), 'player' : (64,64)}
+SIZE = {'paddle' : (20,20), 'ball' : (20,20), 'player' : (64,64)}
 POS = {
     'left_paddle' : (30,WINDOW_HEIGHT/2),
     'player_paddle' : (int(BATTLE_AREA_LEFT + (BATTLE_AREA_LEFT * 0.5)), (BATTLE_AREA_BOTTOM + BATTLE_AREA_TOP) / 2),
@@ -11,7 +11,7 @@ POS = {
     'right_paddle' : (WINDOW_WIDTH-30,WINDOW_HEIGHT/2),
     'ball' : (WINDOW_WIDTH/2,WINDOW_HEIGHT/2)
 }
-SPEED = {'paddle' : 700, 'ai_paddle' : 500, 'ball' : 700, 'player' : 300, 'fly' : 200, 'spider' : 150, 'beetle' : 40}
+SPEED = {'paddle' : 200, 'ai_paddle' : 500, 'ball' : 700, 'player' : 300, 'fly' : 200, 'spider' : 150, 'beetle' : 40}
 SPEED_LIMIT = {'ball' : pygame.Vector2(1600,600)}
 ERROR_RATE = {'big' : 0}
 COOLDOWN = {'paddle' : 1, 'ai_paddle_decision' : 0.5}
@@ -85,7 +85,7 @@ FONTS = {
     'score' : pygame.font.SysFont('comicsans', 160),
     'menu_title' : pygame.font.SysFont('comicsans', 120),
     'menu_buttons' : pygame.font.SysFont('comicsans', 45),
-    'instructions_player' : pygame.font.SysFont('comicsans', 80),
+    'instructions_player' : pygame.font.SysFont('comicsans', 70),
     'instructions_text' : pygame.font.SysFont('comicsans', 20),
     'dialogue' : pygame.font.SysFont('comicsans', 30)
 }

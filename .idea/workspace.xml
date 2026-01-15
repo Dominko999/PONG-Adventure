@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="83" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PONG-Adventure" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="349Cx0xJpWCOO5Y7OfTQlMrwIlJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Game (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Game (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Game (3).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Game (4).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Nauka pythona.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pong_game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/djezi/Desktop/Python projects/PONG + ADVENTURE/Pong + Adventure/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.27522936&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1768597205342" />
+    <option name="spentUsd" value="0.30656943" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\djezi\Desktop\Python projects\PONG + ADVENTURE\Pong + Adventure\code" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\djezi\Desktop\Python projects\Pong + with even better code\code" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Game (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PONG +" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Pong +" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Pong +/Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game (4)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PONG +" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Pong +/Pong +" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Pong +/Pong +/Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PONG +" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="C:\Users\djezi\Desktop\Python projects\Pong\Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pong" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\djezi\Desktop\Python projects\Pong + with even better code\code\Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PONG +" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.13" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PONG +" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Game" />
+      <item itemvalue="Python.Game (2)" />
+      <item itemvalue="Python.Game (4)" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.Game (4)" />
+        <item itemvalue="Python.Game (2)" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.142" />
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="" />
+      <created>1760616643911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760616643911</updated>
+      <workItem from="1760616645046" duration="2108000" />
+      <workItem from="1760628291997" duration="30000" />
+      <workItem from="1760638726325" duration="1128000" />
+      <workItem from="1760642257444" duration="153000" />
+      <workItem from="1760642513291" duration="11000" />
+      <workItem from="1760642542724" duration="1474000" />
+      <workItem from="1760945555557" duration="1704000" />
+      <workItem from="1760975994272" duration="17340000" />
+      <workItem from="1760994382596" duration="1108000" />
+      <workItem from="1761054799118" duration="1496000" />
+      <workItem from="1761075695970" duration="1022000" />
+      <workItem from="1761125600617" duration="1412000" />
+      <workItem from="1761139082056" duration="4217000" />
+      <workItem from="1761145607508" duration="3992000" />
+      <workItem from="1761211954586" duration="186000" />
+      <workItem from="1761216277161" duration="896000" />
+      <workItem from="1761217258730" duration="336000" />
+      <workItem from="1761217611070" duration="234000" />
+      <workItem from="1761217866825" duration="2204000" />
+      <workItem from="1761666520241" duration="3335000" />
+      <workItem from="1761735097254" duration="2249000" />
+      <workItem from="1761761114301" duration="78000" />
+      <workItem from="1761761204883" duration="3596000" />
+      <workItem from="1761773396822" duration="6134000" />
+      <workItem from="1761808693711" duration="6430000" />
+      <workItem from="1761826696550" duration="5494000" />
+      <workItem from="1761841423030" duration="1773000" />
+      <workItem from="1761853747424" duration="582000" />
+      <workItem from="1762016037634" duration="106000" />
+      <workItem from="1762020662997" duration="698000" />
+      <workItem from="1762022841466" duration="5621000" />
+      <workItem from="1762105660069" duration="3659000" />
+      <workItem from="1762112185323" duration="1304000" />
+      <workItem from="1762275190707" duration="3079000" />
+      <workItem from="1762344943079" duration="4328000" />
+      <workItem from="1762356485388" duration="2008000" />
+      <workItem from="1762364593622" duration="14483000" />
+      <workItem from="1762412700841" duration="4717000" />
+      <workItem from="1762424538336" duration="2657000" />
+      <workItem from="1762427479625" duration="8338000" />
+      <workItem from="1762444045560" duration="310000" />
+      <workItem from="1762445020670" duration="1226000" />
+      <workItem from="1762456931763" duration="1926000" />
+      <workItem from="1762697974298" duration="1076000" />
+      <workItem from="1762703134972" duration="2349000" />
+      <workItem from="1762717789753" duration="7776000" />
+      <workItem from="1762937586216" duration="8264000" />
+      <workItem from="1763113901068" duration="5000" />
+      <workItem from="1763412598851" duration="180000" />
+      <workItem from="1763412920952" duration="8000" />
+      <workItem from="1763412942463" duration="591000" />
+      <workItem from="1763413640329" duration="1865000" />
+      <workItem from="1763549047238" duration="6699000" />
+      <workItem from="1763634892760" duration="6707000" />
+      <workItem from="1763642504872" duration="3173000" />
+      <workItem from="1763645792002" duration="654000" />
+      <workItem from="1763654848114" duration="2888000" />
+      <workItem from="1763669351287" duration="2928000" />
+      <workItem from="1763674572115" duration="2853000" />
+      <workItem from="1763758904533" duration="1224000" />
+      <workItem from="1763900305210" duration="4871000" />
+      <workItem from="1763908909518" duration="6806000" />
+      <workItem from="1764005533364" duration="5265000" />
+      <workItem from="1764181012613" duration="2113000" />
+      <workItem from="1764246272593" duration="2821000" />
+      <workItem from="1764258622339" duration="119000" />
+      <workItem from="1764258783984" duration="2522000" />
+      <workItem from="1764700670945" duration="3315000" />
+      <workItem from="1764845728540" duration="7988000" />
+      <workItem from="1764863030033" duration="4930000" />
+      <workItem from="1764876028230" duration="416000" />
+      <workItem from="1764880250620" duration="195000" />
+      <workItem from="1764883770539" duration="832000" />
+      <workItem from="1764926482024" duration="2939000" />
+      <workItem from="1764931196442" duration="1450000" />
+      <workItem from="1765016094865" duration="1100000" />
+      <workItem from="1765042473252" duration="6847000" />
+      <workItem from="1765186858185" duration="3767000" />
+      <workItem from="1765199703662" duration="279000" />
+      <workItem from="1765213308099" duration="1782000" />
+      <workItem from="1765356646619" duration="4378000" />
+      <workItem from="1765362294266" duration="5401000" />
+      <workItem from="1765369355648" duration="3596000" />
+      <workItem from="1765373374733" duration="14000" />
+      <workItem from="1765376379982" duration="1650000" />
+      <workItem from="1765381444071" duration="373000" />
+      <workItem from="1765381999567" duration="92000" />
+      <workItem from="1765389385123" duration="577000" />
+      <workItem from="1765390574524" duration="5000" />
+      <workItem from="1765399226218" duration="956000" />
+      <workItem from="1765453339253" duration="6841000" />
+      <workItem from="1765481662451" duration="107000" />
+      <workItem from="1765481857255" duration="639000" />
+      <workItem from="1765488838341" duration="654000" />
+      <workItem from="1765534805490" duration="462000" />
+      <workItem from="1765535366667" duration="1636000" />
+      <workItem from="1765788766126" duration="1462000" />
+      <workItem from="1765829521667" duration="4064000" />
+      <workItem from="1765959143884" duration="6435000" />
+      <workItem from="1766053988925" duration="1089000" />
+      <workItem from="1766055122264" duration="8265000" />
+      <workItem from="1766072959151" duration="4546000" />
+      <workItem from="1766087622430" duration="2327000" />
+      <workItem from="1766175886608" duration="3092000" />
+      <workItem from="1766232239649" duration="2751000" />
+      <workItem from="1766420885202" duration="4726000" />
+      <workItem from="1766613011359" duration="199000" />
+      <workItem from="1766613676151" duration="168000" />
+      <workItem from="1766613866543" duration="4167000" />
+      <workItem from="1766692244636" duration="3298000" />
+      <workItem from="1767112694807" duration="2261000" />
+      <workItem from="1767203912888" duration="12164000" />
+      <workItem from="1767270442918" duration="4027000" />
+      <workItem from="1767281010216" duration="4682000" />
+      <workItem from="1767289321665" duration="381000" />
+      <workItem from="1767300555810" duration="11987000" />
+      <workItem from="1767364147769" duration="2328000" />
+      <workItem from="1767380445656" duration="5242000" />
+      <workItem from="1767387978375" duration="8037000" />
+      <workItem from="1767561395308" duration="334000" />
+      <workItem from="1767779777633" duration="788000" />
+      <workItem from="1767809889325" duration="2986000" />
+      <workItem from="1767858734025" duration="4490000" />
+      <workItem from="1767980082581" duration="667000" />
+      <workItem from="1768207723541" duration="704000" />
+      <workItem from="1768378399390" duration="438000" />
+      <workItem from="1768387046183" duration="6378000" />
+      <workItem from="1768415509935" duration="3619000" />
+      <workItem from="1768475529724" duration="172000" />
+      <workItem from="1768475751047" duration="410000" />
+      <workItem from="1768476181271" duration="890000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Game_py$Game__1_.coverage" NAME="Game (1) Coverage Results" MODIFIED="1762020709731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_py$test.coverage" NAME="test Coverage Results" MODIFIED="1761779308408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pong$pong_game.coverage" NAME="pong_game Coverage Results" MODIFIED="1760618006813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Ćwiczenia 2" />
+    <SUITE FILE_PATH="coverage/settings_py$main.coverage" NAME="main Coverage Results" MODIFIED="1762714944422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/PONG__$main.coverage" NAME="main Coverage Results" MODIFIED="1763908543563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/Game_py$main.coverage" NAME="main Coverage Results" MODIFIED="1762357183101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/Game_py$pong_game.coverage" NAME="pong_game Coverage Results" MODIFIED="1760994389855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Ćwiczenia 2" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768477026444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/Pong$Game.coverage" NAME="Game Coverage Results" MODIFIED="1760617945164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_py$Game__4_.coverage" NAME="Game (4) Coverage Results" MODIFIED="1761822469163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Pong +/Pong +" />
+    <SUITE FILE_PATH="coverage/Game_py$Nauka_pythona.coverage" NAME="Nauka pythona Coverage Results" MODIFIED="1761763730309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_py$Game.coverage" NAME="Game Coverage Results" MODIFIED="1762032175286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_py$Game__2_.coverage" NAME="Game (2) Coverage Results" MODIFIED="1761779318181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Pong +" />
+    <SUITE FILE_PATH="coverage/battle_sprites_py$main.coverage" NAME="main Coverage Results" MODIFIED="1764250759191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/main_py$Game.coverage" NAME="Game Coverage Results" MODIFIED="1763639521973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

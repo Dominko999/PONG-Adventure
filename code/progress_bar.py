@@ -16,7 +16,9 @@ class ProgressBar(pygame.sprite.Sprite):
         if anchor == 'left':
             self.rect.midleft = (x, y)
         elif anchor == 'right':
-            self.rect.midright = (x,y)
+            self.rect.midright = (x, y)
+        elif anchor == 'center':
+            self.rect.center = (x, y)
         self.foreground_rect = self.rect.copy()
         self.color = color
         self.background_image.fill(self.color)

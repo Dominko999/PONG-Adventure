@@ -91,10 +91,15 @@ class LeftPaddle(Paddle):
             self.slide_timer.activate()
 
 class PlayerPaddle(LeftPaddle):
-    def __init__(self, groups):
+    def __init__(self, groups, player):
         super().__init__(groups)
-        self.base_x = POS['player_paddle'][0]
+        self.sync_stats(player)
         self.rect = self.image.get_frect(center=(POS['player_paddle']))
+        self.base_x = POS['player_paddle'][0]
+
+    def sync_stats(self, player):
+        self.image = pygame.Surface((SIZE['paddle'][0], SIZE['paddle'][1] + (player.size * 25)))
+        self.speed = SPEED['paddle'] + (player.agility * 100)
 
     def slide(self, dt):
         if self.slide_timer:
