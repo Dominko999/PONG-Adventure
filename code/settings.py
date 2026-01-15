@@ -59,12 +59,12 @@ BATTLE_STATS = {
 'Evil spiderlike creature' : {
     'speed' : 300,
     'paddle_size' : (20,160),
-    'error_rate' : 0,
+    'error_rate' : 0.1,
     'low_speed_multiplier' : 0.5,
     'medium_speed_multiplier' : 1,
     'high_speed_multiplier' : 1.3,
     'attack' : 0,
-    'slide' : 7,
+    'slide' : 4,
     'nothing' : 10  # 100% = 10
     },
 'Evil very big beetle' : {

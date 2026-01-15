@@ -145,7 +145,7 @@ class FlyEnemy(Enemy):
         super().__init__(groups, collision_group, world_size)
         self.name = "Evil fly"
         self.health = 1
-        self.exp_gain = 7
+        self.exp_gain = 2
         self.animated_sprite = AnimatedSprite('fly', 4, (120, 76), 8)
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect
