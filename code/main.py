@@ -7,6 +7,8 @@ from save_manager import SaveManager
 if __name__ == '__main__':
     pygame.init()
     pygame.display.set_caption('Pong + Adventure')
+    icon = resource_path(os.path.join('data', 'icon.png'))
+    pygame.display.set_icon(pygame.image.load(icon))
 
     clock = pygame.time.Clock()
 

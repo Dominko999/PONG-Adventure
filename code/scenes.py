@@ -303,7 +303,8 @@ class Instructions(Scene):
         super().__init__(scene_manager)
 
         self.overworld_instructions_text = ['Use WASD to move',
-                                    'Press E key to advance dialogue and interact with NPCs and items']
+                                    'Press E key to advance dialogue and interact with NPCs and items',
+                                    'Press Esc key to pause the game']
         self.battle_instructions_text = ['Use W and S keys to move the paddle up and down',
                                     'Use D key to bounce the ball with more power',
                                     'Use Q key to make the paddle slide and curve the ball']
@@ -324,10 +325,10 @@ class Instructions(Scene):
         write_text('Overworld controls:', FONTS['menu_buttons'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 100, screen=self.screen)
         write_text(self.overworld_instructions_text, FONTS['instructions_text'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 150, 50, screen=self.screen)
 
-        write_text('Battle controls:', FONTS['menu_buttons'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 300,
+        write_text('Battle controls:', FONTS['menu_buttons'], COLORS['bg_detail'], WINDOW_WIDTH / 2, 350,
                    screen=self.screen)
         write_text(self.battle_instructions_text, FONTS['instructions_text'], COLORS['bg_detail'], WINDOW_WIDTH / 2,
-                   350, 50, screen=self.screen)
+                   400, 50, screen=self.screen)
 
         self.buttons_group.draw(self.screen)
 
@@ -469,15 +470,20 @@ class GameOver(Scene):
         super().__init__(scene_manager)
 
         self.buttons_group = pygame.sprite.Group()
-        self.continue_from_last_save_button = Button(self.buttons_group, 'Retry', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
+        self.continue_from_last_save_button = Button(self.buttons_group, 'Retry from last save', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                                      WINDOW_HEIGHT / 2,
-                                                     300, 90, lambda: self.game_manager.change_scene('OVERWORLD', False, True), self.screen)
+                                                     500, 90, lambda: self.retry_from_last_save(), self.screen)
         self.return_to_menu_button = Button(self.buttons_group, 'Menu', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                             WINDOW_HEIGHT / 2 + 100,
                                             300, 90, lambda: self.game_manager.change_scene('MENU'), self.screen)
         self.quit_button = Button(self.buttons_group, 'Quit', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                   WINDOW_HEIGHT / 2 + 200,
                                   300, 90, lambda: self.game_manager.quit_game(), self.screen)
+
+    def retry_from_last_save(self):
+        self.game_manager.save_manager.load_save()
+        self.game_manager.player = None
+        self.game_manager.change_scene('OVERWORLD', False, True)
 
     def run(self, dt):
         super().run(dt)
@@ -542,11 +548,11 @@ class Stats(Scene):
         self.game_manager.player.stats['exp'] += self.game_manager.exp_gain
 
     def match_fli_image(self):
-        if self.game_manager.player.stats['level'] == 1:
+        if self.game_manager.player.stats['level'] == 1 or self.game_manager.player.stats['level'] == 2:
             self.ui_sprites.remove(self.fli_image)
             self.fli_image = AnimatedSprite('fli_stats', 1, (256,256), 0)
             self.ui_sprites.add(self.fli_image)
-        elif self.game_manager.player.stats['level'] == 2:
+        elif self.game_manager.player.stats['level'] == 3 or self.game_manager.player.stats['level'] == 4:
             self.ui_sprites.remove(self.fli_image)
             self.fli_image = AnimatedSprite('medium_fli_stats', 1, (256,256), 0)
             self.ui_sprites.add(self.fli_image)

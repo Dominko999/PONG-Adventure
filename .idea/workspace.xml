@@ -6,14 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/global_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/global_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/PongAdventure/warn-PongAdventure.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/warn-PongAdventure.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/save_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/save_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/tilemap.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/tilemap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saves/save1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saves/save2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fli.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/data/fli.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/PongAdventure.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/PongAdventure.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/saves/save2.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save2.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="102" />
+    <option name="cachedIndexableFilesCount" value="106" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -34,6 +40,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Dominko999"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Dominko999/PONG-Adventure.git",
+    "accountId": "02c1cfc5-c07d-4b72-b605-2ba3aab7893f"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -414,11 +432,15 @@
       <workItem from="1768560556321" duration="98000" />
       <workItem from="1768592034901" duration="3789000" />
       <workItem from="1768596364820" duration="4814000" />
+      <workItem from="1768659333075" duration="5497000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Game_py$Game__1_.coverage" NAME="Game (1) Coverage Results" MODIFIED="1762020709731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -428,7 +450,7 @@
     <SUITE FILE_PATH="coverage/PONG__$main.coverage" NAME="main Coverage Results" MODIFIED="1763908543563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$main.coverage" NAME="main Coverage Results" MODIFIED="1762357183101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$pong_game.coverage" NAME="pong_game Coverage Results" MODIFIED="1760994389855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Ćwiczenia 2" />
-    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768600286781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768663068269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Pong$Game.coverage" NAME="Game Coverage Results" MODIFIED="1760617945164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PONG_Adventure_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768484171729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$Game__4_.coverage" NAME="Game (4) Coverage Results" MODIFIED="1761822469163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Pong +/Pong +" />

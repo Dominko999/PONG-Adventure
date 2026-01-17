@@ -33,8 +33,11 @@ class SaveManager():
         with open(self.current_save_file_path, 'w') as write_file:
             json.dump(self.game_state, write_file)
 
-    def load_save(self, save_chosen):
-        self.current_save_file_name = save_chosen
+    def load_save(self, save_chosen=None):
+        if save_chosen is None:
+            save_chosen = self.current_save_file_name
+        else:
+            self.current_save_file_name = save_chosen
         self.current_save_file_path = get_save_path(os.path.join('saves', str(save_chosen + '.json')))
         try:
             with open(self.current_save_file_path, 'r') as read_file:
