@@ -1,4 +1,5 @@
 import pygame, sys, random, json, os
+from global_functions import resource_path
 
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 BATTLE_AREA_LEFT, BATTLE_AREA_TOP, BATTLE_AREA_RIGHT, BATTLE_AREA_BOTTOM = WINDOW_WIDTH / 14, WINDOW_HEIGHT / 12, WINDOW_WIDTH / 14 * 13, WINDOW_HEIGHT / 12 * 10
@@ -80,12 +81,12 @@ BATTLE_STATS = {
 }
 
 pygame.font.init()
+FONT_FILE = resource_path(os.path.join('data', 'BoldPixels.ttf'))
 FONTS = {
-    'score' : pygame.font.SysFont('comicsans', 160),
-    'menu_title' : pygame.font.SysFont('comicsans', 120),
-    'menu_buttons' : pygame.font.SysFont('comicsans', 45),
-    'instructions_player' : pygame.font.SysFont('comicsans', 70),
-    'instructions_text' : pygame.font.SysFont('comicsans', 20),
-    'dialogue' : pygame.font.SysFont('comicsans', 30)
+    'menu_title' : pygame.font.Font(FONT_FILE, 140),
+    'menu_buttons' : pygame.font.Font(FONT_FILE, 60),
+    'instructions_player' : pygame.font.Font(FONT_FILE, 85),
+    'instructions_text' : pygame.font.Font(FONT_FILE, 25),
+    'dialogue' : pygame.font.Font(FONT_FILE, 35)
 }
 

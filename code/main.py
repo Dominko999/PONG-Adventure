@@ -7,6 +7,7 @@ from save_manager import SaveManager
 if __name__ == '__main__':
     pygame.init()
     pygame.display.set_caption('Pong + Adventure')
+    pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE | pygame.SCALED)
     icon = resource_path(os.path.join('data', 'icon.png'))
     pygame.display.set_icon(pygame.image.load(icon))
 

@@ -57,7 +57,7 @@ class GameManager():
 
 class Scene():
     def __init__(self, game_manager : GameManager):
-        self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.screen = pygame.display.get_surface()
 
         self.game_manager = game_manager
 
