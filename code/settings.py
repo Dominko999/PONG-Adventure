@@ -1,5 +1,4 @@
-import pygame, random, json
-from os.path import join
+import pygame, sys, random, json, os
 
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 BATTLE_AREA_LEFT, BATTLE_AREA_TOP, BATTLE_AREA_RIGHT, BATTLE_AREA_BOTTOM = WINDOW_WIDTH / 14, WINDOW_HEIGHT / 12, WINDOW_WIDTH / 14 * 13, WINDOW_HEIGHT / 12 * 10

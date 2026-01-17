@@ -178,7 +178,7 @@ class Overworld(Scene):
             ('SpiderlikeEnemy', 2460, 4350),
             ('SpiderlikeEnemy', 3760, 2780),
             ('SpiderlikeEnemy', 3760, 2780),
-            ('BeetleEnemy', 3760, 2780, 'BlockedDoor', 4096, 2480)
+            ('BeetleEnemy', 3760, 2780, 'BlockedDoor', 1710, 5125) #4096, 2480
         ]
         self.spawn_enemies()
         # NPCs
@@ -202,12 +202,13 @@ class Overworld(Scene):
             class_name = line[0]
             pos = (line[1], line[2])
             id = str(index)
+            #check if enemy is not cleared
             if not self.game_manager.save_manager.is_instance_already_cleared(id):
                 enemy_instance = self.classes_of_instances_to_spawn[class_name]((self.overworld_sprites, self.enemy_sprites), self.tilemap.collision_group, self.tilemap.world_size, pos, id)
-            if len(line) == 7:
-                blocked_door = line[4]
-                door_pos = (line[5], line[6])
-                self.classes_of_instances_to_spawn[blocked_door]((self.overworld_sprites, self.tilemap.collision_group), door_pos, enemy_instance)
+                if len(line) == 7:
+                    blocked_door = line[4]
+                    door_pos = (line[5], line[6])
+                    self.classes_of_instances_to_spawn[blocked_door]((self.overworld_sprites, self.tilemap.collision_group), door_pos, enemy_instance)
 
 
 

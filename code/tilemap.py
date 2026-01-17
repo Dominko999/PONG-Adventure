@@ -1,5 +1,5 @@
 import pygame.sprite
-
+from global_functions import resource_path
 from timer import Timer
 from pygame import sprite
 from settings import *
@@ -18,7 +18,7 @@ class Tile(pygame.sprite.Sprite):
 class Tilemap():
     def __init__(self):
         super().__init__()
-        self.tmx_file = load_pygame(Path(__file__).resolve().parent.parent / 'data' / 'tilemap.tmx')
+        self.tmx_file = load_pygame(resource_path(os.path.join('data', 'tilemap.tmx')))
         self.draw_group = pygame.sprite.Group()
         self.background_group = pygame.sprite.Group()
         self.collision_group = pygame.sprite.Group()
