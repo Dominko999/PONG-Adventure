@@ -13,7 +13,7 @@ class Button(pygame.sprite.Sprite):
         self.rect = self.image.get_frect(center=(x, y))
 
         self.text_surf = FONTS[font_name].render(str(text), True, COLORS[font_color])
-        self.text_rect = self.text_surf.get_frect(center=(self.image.get_width()/2, self.image.get_height()/2-5))
+        self.text_rect = self.text_surf.get_frect(center=(self.image.get_width()/2, self.image.get_height()/2))
 
         self.pressed_last = False
         self._armed = False

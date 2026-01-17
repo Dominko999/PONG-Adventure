@@ -13,6 +13,7 @@ class TextBox(pygame.sprite.Sprite):
         self.active = True
 
         self.letter_timer = Timer(0.01,lambda: self.write_letter(), repeat=True)
+        self.button_actvated_timer = Timer(0.06,lambda: self.button_next_frame(), repeat=False)
         self.letter_index = 0
         self.line_to_blit = ''
 
@@ -33,6 +34,10 @@ class TextBox(pygame.sprite.Sprite):
             self.animated_sprite = AnimatedSprite('text_box', 1, (1088, 216), 0)
             self.image = self.animated_sprite.image.copy()
             self.rect = self.image.get_frect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 6 * 5))
+
+        # E button
+        self.e_button = AnimatedSprite('E_button', 2, (64, 64), 0)
+        self.e_button.rect.bottomright = (self.image.get_width() - 16, self.image.get_height()-16)
 
 
         # text
@@ -59,6 +64,8 @@ class TextBox(pygame.sprite.Sprite):
 
     def next_line(self):
         self.line += 1
+        self.button_actvated_timer.activate()
+        self.button_next_frame()
         if self.line < len(self.text):
             #refreshes text and proceeds to redraw according to mode
             self.letter_index = 0
@@ -74,11 +81,18 @@ class TextBox(pygame.sprite.Sprite):
 
         self.image.blit(self.name_text_surf, self.name_text_rect)
         self.image.blit(self.text_surf, self.text_rect)
+        self.image.blit(self.e_button.image, self.e_button.rect)
 
     def redraw_text(self):
         self.image = self.animated_sprite.frames[0].copy()
 
         self.image.blit(self.text_surf, self.text_rect)
+        self.image.blit(self.e_button.image, self.e_button.rect)
+
+    def button_next_frame(self):
+        self.e_button.index += 1
+        self.e_button.image = self.e_button.frames[int(self.e_button.index) % len(self.e_button.frames)]
 
     def update(self, dt):
         self.letter_timer.update()
+        self.button_actvated_timer.update()

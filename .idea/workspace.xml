@@ -14,11 +14,11 @@
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/warn-PongAdventure.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/warn-PongAdventure.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/xref-PongAdventure.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/xref-PongAdventure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/text_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/text_box.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/PongAdventure.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/PongAdventure.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saves/save1.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,7 +431,7 @@
       <workItem from="1768560556321" duration="98000" />
       <workItem from="1768592034901" duration="3789000" />
       <workItem from="1768596364820" duration="4814000" />
-      <workItem from="1768659333075" duration="7835000" />
+      <workItem from="1768659333075" duration="15180000" />
     </task>
     <servers />
   </component>
@@ -449,7 +449,7 @@
     <SUITE FILE_PATH="coverage/PONG__$main.coverage" NAME="main Coverage Results" MODIFIED="1763908543563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$main.coverage" NAME="main Coverage Results" MODIFIED="1762357183101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$pong_game.coverage" NAME="pong_game Coverage Results" MODIFIED="1760994389855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Ćwiczenia 2" />
-    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768667229254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768669583337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Pong$Game.coverage" NAME="Game Coverage Results" MODIFIED="1760617945164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PONG_Adventure_py$main.coverage" NAME="main Coverage Results" MODIFIED="1768484171729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/Game_py$Game__4_.coverage" NAME="Game (4) Coverage Results" MODIFIED="1761822469163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Pong +/Pong +" />

@@ -178,7 +178,7 @@ class Overworld(Scene):
             ('SpiderlikeEnemy', 2460, 4350),
             ('SpiderlikeEnemy', 3760, 2780),
             ('SpiderlikeEnemy', 3760, 2780),
-            ('BeetleEnemy', 3760, 2780, 'BlockedDoor', 1710, 5125) #4096, 2480
+            ('BeetleEnemy', 3760, 2780, 'BlockedDoor', 4096, 2480)
         ]
         self.spawn_enemies()
         # NPCs
@@ -205,9 +205,9 @@ class Overworld(Scene):
             #check if enemy is not cleared
             if not self.game_manager.save_manager.is_instance_already_cleared(id):
                 enemy_instance = self.classes_of_instances_to_spawn[class_name]((self.overworld_sprites, self.enemy_sprites), self.tilemap.collision_group, self.tilemap.world_size, pos, id)
-                if len(line) == 7:
-                    blocked_door = line[4]
-                    door_pos = (line[5], line[6])
+                if len(line) == 6:
+                    blocked_door = line[3]
+                    door_pos = (line[4], line[5])
                     self.classes_of_instances_to_spawn[blocked_door]((self.overworld_sprites, self.tilemap.collision_group), door_pos, enemy_instance)
 
 
@@ -472,7 +472,7 @@ class GameOver(Scene):
         self.buttons_group = pygame.sprite.Group()
         self.continue_from_last_save_button = Button(self.buttons_group, 'Retry from last save', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                                      WINDOW_HEIGHT / 2,
-                                                     500, 90, lambda: self.retry_from_last_save(), self.screen)
+                                                     600, 90, lambda: self.retry_from_last_save(), self.screen)
         self.return_to_menu_button = Button(self.buttons_group, 'Menu', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                             WINDOW_HEIGHT / 2 + 100,
                                             300, 90, lambda: self.game_manager.change_scene('MENU'), self.screen)
