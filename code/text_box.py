@@ -4,10 +4,12 @@ from timer import Timer
 from animation import AnimatedSprite
 
 class TextBox(pygame.sprite.Sprite):
-    def __init__(self, groups, text, character_name='', mode='dialogue'):
+    def __init__(self, groups, text, music_manager, character_name='', mode='dialogue'):
         super().__init__(groups)
         self.text = text
         self.mode = mode
+
+        self.music_manager = music_manager
 
         self.line = 0
         self.active = True
@@ -49,6 +51,7 @@ class TextBox(pygame.sprite.Sprite):
     def write_letter(self):
         full_line = self.text[self.line]
         if self.letter_index < len(full_line):
+            self.music_manager.play_sound('typing')
             self.line_to_blit = self.line_to_blit + str(full_line[self.letter_index])
             self.text_surf = FONTS['dialogue'].render(str(full_line), True, COLORS['paddle_active'])
             self.text_rect = self.text_surf.get_frect(center=(self.image.get_width() / 2, self.image.get_height() / 2))
@@ -64,6 +67,7 @@ class TextBox(pygame.sprite.Sprite):
 
     def next_line(self):
         self.line += 1
+        self.music_manager.play_sound('button_pressed')
         self.button_actvated_timer.activate()
         self.button_next_frame()
         if self.line < len(self.text):

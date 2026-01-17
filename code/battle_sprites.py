@@ -239,10 +239,11 @@ class EnemyPaddle(AiRightPaddle):
                 self.rect.centery += self.speed * dt * self.slide_direction * SPEED_BOOST['slide']
 
 class Ball(pygame.sprite.Sprite):
-    def __init__(self, groups, paddle_sprites, update_stats):
+    def __init__(self, groups, paddle_sprites, update_stats, music_manager):
         super().__init__(groups)
         self.paddle_sprites = paddle_sprites
         self.update_stats = update_stats
+        self.music_manager = music_manager
 
         self.image = pygame.Surface(SIZE['ball'], pygame.SRCALPHA)
         self.rect = self.image.get_frect(center=(POS['ball']))
@@ -301,9 +302,11 @@ class Ball(pygame.sprite.Sprite):
             self.vector.y *= -1
 
         if self.rect.left < 0:
+            self.music_manager.play_sound('health_lost')
             self.update_stats('left')
             self.reset()
         elif self.rect.right > WINDOW_WIDTH:
+            self.music_manager.play_sound('health_lost')
             self.update_stats('right')
             self.reset()
 
@@ -369,6 +372,7 @@ class Ball(pygame.sprite.Sprite):
     def collision(self, direction):
         for sprite in self.paddle_sprites:
             if sprite.rect.colliderect(self.rect):
+                self.music_manager.play_sound('ball_hit')
                 if direction == "horizontal":
                     if self.rect.right > sprite.rect.left and self.old_rect.right <= sprite.old_rect.left:
                         self.rect.right = sprite.rect.left
@@ -397,8 +401,8 @@ class Ball(pygame.sprite.Sprite):
         self.color = COLORS['ball']
 
 class BattleBall(Ball):
-    def __init__(self, groups, paddle_sprites, update_stats):
-        super().__init__(groups, paddle_sprites, update_stats)
+    def __init__(self, groups, paddle_sprites, update_stats, music_manager):
+        super().__init__(groups, paddle_sprites, update_stats, music_manager)
 
     def bounce_and_score(self):
         if self.rect.top < BATTLE_AREA_TOP and self.vector.y < 0:

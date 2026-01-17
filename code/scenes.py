@@ -10,6 +10,7 @@ from camera import *
 from progress_bar import ProgressBar
 from global_functions import *
 from save_manager import SaveManager
+from music_manager import MusicManager
 
 
 class GameManager():
@@ -27,15 +28,20 @@ class GameManager():
         self.player = None
 
         self.save_manager = SaveManager()
+        self.music_manager = MusicManager()
 
-    def change_scene(self, scene, pause_previous = False, new_instance = False): #Changes the scene to one passed in the scene variable, if pause previous is true, then the previous scene is stored so that you can resume it
+    def change_scene(self, scene, pause_previous = False, new_instance = False, change_music_to=None): #Changes the scene to one passed in the scene variable, if pause previous is true, then the previous scene is stored so that you can resume it
+        if change_music_to is not None:
+            self.music_manager.play_music(change_music_to)
         if pause_previous:
             self.paused_scene = self.current_scene
         self.current_scene = scene
         if new_instance:
             self.new_instance_request = scene
 
-    def unpause_scene(self):
+    def unpause_scene(self, change_music_to=None):
+        if change_music_to is not None:
+            self.music_manager.play_music(change_music_to)
         if self.paused_scene is not None:
             self.current_scene = self.paused_scene
             self.paused_scene = None
@@ -84,7 +90,7 @@ class Battle(Scene):
         self.enemy_name = getattr(self.game_manager.active_enemy, 'name')
 
         # creating sprite instances
-        self.ball = BattleBall(self.all_sprites, self.paddle_sprites, self.update_UI)
+        self.ball = BattleBall(self.all_sprites, self.paddle_sprites, self.update_UI, self.game_manager.music_manager)
         self.player_paddle = PlayerPaddle((self.all_sprites, self.paddle_sprites), self.game_manager.player)
         self.right_paddle = EnemyPaddle((self.all_sprites, self.paddle_sprites), self.ball, self.enemy_name)
 
@@ -150,6 +156,7 @@ class Battle(Scene):
 class Overworld(Scene):
     def __init__(self, scene_manager : GameManager):
         super().__init__(scene_manager)
+        self.game_manager.music_manager.play_music('overworld')
         self.tilemap = Tilemap()
         self.overworld_sprites = pygame.sprite.Group()
         self.enemy_sprites = pygame.sprite.Group()
@@ -193,7 +200,7 @@ class Overworld(Scene):
         self.camera_group = CameraGroup(self.camera)
         self.camera_group.add(self.tilemap.background_group,self.overworld_sprites, self.tilemap.collision_group)
 
-        self.text_box = TextBox(self.dialogue_sprites, 'none')
+        self.text_box = TextBox(self.dialogue_sprites, 'none', self.game_manager.music_manager)
 
         self.end_game = False
 
@@ -217,14 +224,14 @@ class Overworld(Scene):
             if enemy.rect.colliderect(self.player.rect):
                 self.game_manager.active_enemy = enemy
                 self.game_manager.player = self.player
-                self.game_manager.change_scene('BATTLE', True, True)
+                self.game_manager.change_scene('BATTLE', True, True, change_music_to='battle')
 
 
     def handle_collision_with_npc(self):
         for npc in self.npc_sprites:
             if npc.rect.colliderect(self.player.rect):
                 self.scene_state = 'Dialogue'
-                self.text_box = TextBox(self.dialogue_sprites, npc.dialogue, npc.name, 'dialogue')
+                self.text_box = TextBox(self.dialogue_sprites, npc.dialogue, self.game_manager.music_manager, npc.name, 'dialogue')
                 npc.advance_dialogue()
 
     def handle_collision_with_items(self):
@@ -233,11 +240,11 @@ class Overworld(Scene):
                 if isinstance(item, LightBulb):
                     self.game_manager.save_manager.save_game(self.player.rect.center, self.player.stats, item.checkpoint_name)
                     self.scene_state = 'Dialogue'
-                    self.text_box = TextBox(self.dialogue_sprites, item.text, mode='text')
+                    self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
                 elif isinstance(item, OldScripture):
                     self.scene_state = 'Dialogue'
                     self.end_game = True
-                    self.text_box = TextBox(self.dialogue_sprites, item.text, mode='text')
+                    self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
 
 
     def run(self, dt):
@@ -358,10 +365,10 @@ class Intro(Scene):
             'To find the scripture and save the world from the evil spirits'
         ]
 
-        self.text_box = TextBox(self.intro_sprites, self.first_image_text, mode='text')
+        self.text_box = TextBox(self.intro_sprites, self.first_image_text, self.game_manager.music_manager, mode='text')
 
         self.skip_button = Button(self.buttons_group, 'Skip', 'menu_buttons', 'bg', WINDOW_WIDTH / 10, WINDOW_HEIGHT / 8,
-                                   150, 50, lambda : self.game_manager.change_scene('OVERWORLD', new_instance = True), self.screen)
+                                   150, 50, lambda : self.game_manager.change_scene('OVERWORLD', new_instance = True, change_music_to='overworld'), self.screen)
 
 
     def run(self, dt):
@@ -379,7 +386,7 @@ class Intro(Scene):
                 self.animated_image.image = self.animated_image.frames[2]
         else:
             # dialogue finished
-            self.game_manager.change_scene('OVERWORLD', new_instance = True)
+            self.game_manager.change_scene('OVERWORLD', new_instance = True, change_music_to='overworld')
 
         #draw
         self.screen.fill(COLORS['bg'])
@@ -400,7 +407,7 @@ class SaveFiles(Scene):
         if self.game_manager.save_manager.new_game:
             self.game_manager.change_scene('INSTRUCTIONS', new_instance=True)
         else:
-            self.game_manager.change_scene('OVERWORLD', new_instance=True)
+            self.game_manager.change_scene('OVERWORLD', new_instance=True, change_music_to='overworld')
 
     def delete_save_file(self, file_number):
         self.game_manager.save_manager.delete_save_file(file_number)
@@ -483,7 +490,7 @@ class GameOver(Scene):
     def retry_from_last_save(self):
         self.game_manager.save_manager.load_save()
         self.game_manager.player = None
-        self.game_manager.change_scene('OVERWORLD', False, True)
+        self.game_manager.change_scene('OVERWORLD', False, True, change_music_to='overworld')
 
     def run(self, dt):
         super().run(dt)
@@ -538,7 +545,7 @@ class Stats(Scene):
         self.level_up_buttons.add(self.health_up_button, self.agility_up_button, self.size_up_button)
         self.start_button = Button(self.default_buttons, 'Continue', 'menu_buttons', 'bg', WINDOW_WIDTH / 2,
                                    WINDOW_HEIGHT / 2 + 250,300, 90,
-                                   lambda : self.game_manager.unpause_scene(), self.screen)
+                                   lambda : self.game_manager.unpause_scene(change_music_to='overworld'), self.screen)
 
     def upgrade_stat(self, stat):
         self.game_manager.player.stats[stat] += 1

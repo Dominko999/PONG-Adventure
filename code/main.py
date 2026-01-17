@@ -4,6 +4,7 @@ from button import *
 from scenes import *
 from save_manager import SaveManager
 
+
 if __name__ == '__main__':
     pygame.init()
     pygame.display.set_caption('Pong + Adventure')
@@ -13,7 +14,7 @@ if __name__ == '__main__':
 
     clock = pygame.time.Clock()
 
-    manager = GameManager("MENU")
+    game_manager = GameManager("MENU")
     RUNNING = True
 
     current_scene_name = None
@@ -38,13 +39,13 @@ if __name__ == '__main__':
 
         dt = clock.tick() / 1000
 
-        new_scene_name = manager.get_scene()
+        new_scene_name = game_manager.get_scene()
 
         if new_scene_name != current_scene_name:
             current_scene_name = new_scene_name
-            if new_scene_name not in scene_instances or new_scene_name == manager.new_instance_request:
-                scene_instances[new_scene_name] = scenes[current_scene_name](manager)
-                manager.new_instance_request = None
+            if new_scene_name not in scene_instances or new_scene_name == game_manager.new_instance_request:
+                scene_instances[new_scene_name] = scenes[current_scene_name](game_manager)
+                game_manager.new_instance_request = None
         current_scene = scene_instances[new_scene_name]
 
         current_scene.run(dt)
