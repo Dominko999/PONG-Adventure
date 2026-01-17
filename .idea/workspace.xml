@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/code/music_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PongAdventure.spec" beforeDir="false" afterPath="$PROJECT_DIR$/PongAdventure.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/xref-PongAdventure.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/xref-PongAdventure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/battle_sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/battle_sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/text_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/text_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/PongAdventure.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/PongAdventure.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music/battle_song.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/music/overworld_song.ogg" beforeDir="false" />
-    </list>
+    <list default="true" id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -436,7 +416,7 @@
       <workItem from="1768560556321" duration="98000" />
       <workItem from="1768592034901" duration="3789000" />
       <workItem from="1768596364820" duration="4814000" />
-      <workItem from="1768659333075" duration="20962000" />
+      <workItem from="1768659333075" duration="21558000" />
     </task>
     <servers />
   </component>
