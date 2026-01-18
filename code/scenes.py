@@ -242,6 +242,8 @@ class Overworld(Scene):
                     self.scene_state = 'Dialogue'
                     self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
                 elif isinstance(item, OldScripture):
+                    self.game_manager.save_manager.save_game(self.player.rect.center, self.player.stats,
+                                                             'Game cleared')
                     self.scene_state = 'Dialogue'
                     self.end_game = True
                     self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
@@ -273,7 +275,7 @@ class Overworld(Scene):
             else:
                 # dialogue finished
                 if self.end_game:
-                    self.game_manager.change_scene('MENU', False)
+                    self.game_manager.change_scene('MENU', False, True)
                 self.scene_state = 'Default'
 
         # draw

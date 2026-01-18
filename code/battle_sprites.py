@@ -302,11 +302,9 @@ class Ball(pygame.sprite.Sprite):
             self.vector.y *= -1
 
         if self.rect.left < 0:
-            self.music_manager.play_sound('health_lost')
             self.update_stats('left')
             self.reset()
         elif self.rect.right > WINDOW_WIDTH:
-            self.music_manager.play_sound('health_lost')
             self.update_stats('right')
             self.reset()
 
@@ -392,6 +390,7 @@ class Ball(pygame.sprite.Sprite):
         pygame.draw.circle(self.image, self.color, (SIZE['ball'][0] / 2, SIZE['ball'][1] / 2), SIZE['ball'][0] / 2)
 
     def reset(self):
+        self.music_manager.play_sound('health_lost')
         self.rect = self.image.get_frect(center = (POS['ball']))
         self.direction = random.choice([1, -1])
 
