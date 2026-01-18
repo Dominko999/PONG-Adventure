@@ -262,6 +262,7 @@ class Overworld(Scene):
             self.camera.update()
             print(self.player.rect.center)
             if self.just_pressed_keys[pygame.K_e]:
+                self.game_manager.music_manager.play_sound('button_pressed')
                 self.handle_collision_with_npc()
                 self.handle_collision_with_items()
 

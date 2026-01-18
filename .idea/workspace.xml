@@ -12,10 +12,9 @@
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/battle_sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/battle_sprites.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/scenes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/PongAdventure.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/PongAdventure.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music/health_lost.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/music/health_lost.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,9 +258,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Game" />
       <item itemvalue="Python.Game (2)" />
       <item itemvalue="Python.Game (4)" />
+      <item itemvalue="Python.Game" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.test" />
     </list>
@@ -429,7 +428,7 @@
       <workItem from="1768592034901" duration="3789000" />
       <workItem from="1768596364820" duration="4814000" />
       <workItem from="1768659333075" duration="21558000" />
-      <workItem from="1768730469512" duration="2866000" />
+      <workItem from="1768730469512" duration="4498000" />
     </task>
     <servers />
   </component>
