@@ -242,8 +242,7 @@ class Overworld(Scene):
                     self.scene_state = 'Dialogue'
                     self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
                 elif isinstance(item, OldScripture):
-                    self.game_manager.save_manager.save_game(self.player.rect.center, self.player.stats,
-                                                             'Game cleared')
+                    self.game_manager.save_manager.save_game(self.player.rect.center, self.player.stats,'Game cleared')
                     self.scene_state = 'Dialogue'
                     self.end_game = True
                     self.text_box = TextBox(self.dialogue_sprites, item.text, self.game_manager.music_manager, mode='text')
@@ -296,7 +295,7 @@ class Menu(Scene):
         self.title_rect = self.title_text.get_rect(center=(WINDOW_WIDTH/2, WINDOW_HEIGHT/2 - 200))
         self.buttons_group = pygame.sprite.Group()
         self.start_button = Button(self.buttons_group, 'Start', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2,
-                                   300, 90, lambda : self.game_manager.change_scene('SAVE_FILES'), self.screen)
+                                   300, 90, lambda : self.game_manager.change_scene('SAVE_FILES', new_instance=True), self.screen)
         self.quit_button = Button(self.buttons_group, 'Quit', 'menu_buttons', 'bg', WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + 200,
                                   300, 90, lambda: self.game_manager.quit_game(), self.screen)
     def run(self, dt):

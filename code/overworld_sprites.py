@@ -149,7 +149,7 @@ class FlyEnemy(Enemy):
         super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil fly"
         self.health = 1
-        self.exp_gain = 10
+        self.exp_gain = 4
         self.animated_sprite = AnimatedSprite('fly', 4, (120, 76), 8)
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect
@@ -169,7 +169,7 @@ class SpiderlikeEnemy(Enemy):
         super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil spiderlike creature"
         self.health = 6
-        self.exp_gain = 6
+        self.exp_gain = 9
         self.animated_sprite = AnimatedSprite('spider', 4, (104, 76), 8)
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect
@@ -189,7 +189,7 @@ class BeetleEnemy(Enemy):
         super().__init__(groups, collision_group, world_size, id)
         self.name = "Evil very big beetle"
         self.health = 14
-        self.exp_gain = 12
+        self.exp_gain = 15
         self.animated_sprite = AnimatedSprite('beetle', 2, (88, 124), 4)
         self.image = self.animated_sprite.image
         self.rect = self.animated_sprite.rect

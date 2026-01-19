@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="25c40a16-4f6d-4401-a4d9-079892a39731" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/PongAdventure.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/PongAdventure/base_library.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/PongAdventure.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/PongAdventure.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/saves/save1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="114" />
+    <option name="cachedIndexableFilesCount" value="115" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -429,6 +422,8 @@
       <workItem from="1768596364820" duration="4814000" />
       <workItem from="1768659333075" duration="21558000" />
       <workItem from="1768730469512" duration="4498000" />
+      <workItem from="1768743917497" duration="679000" />
+      <workItem from="1768753193701" duration="1127000" />
     </task>
     <servers />
   </component>
